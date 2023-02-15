@@ -258,8 +258,11 @@ public:
         try {
             // cv::Mat -> sensor_msgs::Image
             std_msgs::Header header;        // empty header
-            header.seq = 0;                 // user defined counter
-            header.stamp = ros::Time::now();// time
+
+            // header.seq = 0;                 // user defined counter
+            // header.stamp = ros::Time::now();// time
+            header = msg->header; //use the rgb time stamp
+            
             //cv_bridge::CvImage img_bridge = cv_bridge::CvImage(header, sensor_msgs::image_encodings::MONO8, cv_img);
             cv_bridge::CvImage img_bridge = cv_bridge::CvImage(header, sensor_msgs::image_encodings::TYPE_32FC1, cv_img);
                         

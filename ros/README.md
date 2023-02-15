@@ -61,7 +61,7 @@ source ~/.bashrc
 cd ~/
 mkdir catkin_ws
 cd catkin_ws
-git clone https://github.com/isl-org/MiDaS
+git clone https://github.com/geturin/MiDaS
 mkdir src
 cp -r MiDaS/ros/* src
 
